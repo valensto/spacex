@@ -19,11 +19,12 @@ $router = new AltoRouter();
 $dispatcher = new Dispatcher();
 
 $router->map('GET', "/", ["controller" => "home", "action" => "index"]);
-$router->map('GET', "/article/[*:slug]", ["controller" => "articles", "action" => "read"]);
+$router->map('GET', "/articles/[*:slug]", ["controller" => "articles", "action" => "read"]);
 
 $match = $router->match();
 if ($match) {
     $dispatcher->dispatch($match['target'], $match["params"]);
 } else {
-    echo 'error route';
+    var_dump("error no matching routes");
+    die();
 }

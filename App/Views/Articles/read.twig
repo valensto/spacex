@@ -5,6 +5,12 @@
 
 {% block body %}
 
-   
+   <div class="container pt-200">
+      <a href="/" class="links">< Back to updates</a>
+      <img class="coverImg" src="{{article.cover}}" alt="{{article.title}}">
+      <date>{{article.created_at}}</date>
+      <h1 class="article-title">{{article.title}}</h1>
+      <p class="content">{{article.content}}</p>
+   </div>
 
 {% endblock %}
